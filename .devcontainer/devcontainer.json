@@ -1,0 +1,14 @@
+{
+    "name": "PHP DevContainer",
+    "dockerComposeFile": "../docker-compose.yml",
+    "service": "web",
+    "workspaceFolder": "/var/www/html",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "bmewburn.vscode-intelephense-client"
+            ]
+        }
+    },
+    "postCreateCommand": "composer install"
+  }

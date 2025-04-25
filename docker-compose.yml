@@ -1,0 +1,26 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8000:80"
+    volumes:
+      - ./src:/var/www/html
+    depends_on:
+      - db
+      - maildev
+
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: testdb
+    volumes:
+      - ./mysql-init:/docker-entrypoint-initdb.d
+    ports:
+      - "3306:3306"
+
+  maildev:
+    image: maildev/maildev
+    ports:
+      - "1080:1080"  # Interface web pour lire les mails
+      - "1025:1025"  # Port SMTP utilisé dans PHPMailer
