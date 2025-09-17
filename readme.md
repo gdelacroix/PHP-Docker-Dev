@@ -27,8 +27,8 @@ php-docker-dev/
 ├── src/
 │   ├── index.php
 │   ├── db.php
-│   └── mailer.php
-├── composer.json
+│   ├── mailer.php
+│   └── composer.json
 ├── Dockerfile
 └── docker-compose.yml
 ```
